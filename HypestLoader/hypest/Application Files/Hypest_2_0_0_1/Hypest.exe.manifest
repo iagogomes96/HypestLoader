@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Hypest.exe" version="2.0.0.1" publicKeyToken="084403211989482e" language="neutral" processorArchitecture="amd64" type="win32" />
+  <description asmv2:iconFile="image.ico" asmv2:publisher="Hypest" co.v1:suiteName="Program" asmv2:product="Hypest Program" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Hypest" version="1.0.0.0" publicKeyToken="A624B1D5A08B9E12" language="neutral" processorArchitecture="amd64" />
+    <commandLine file="Hypest.exe" parameters="" />
+  </entryPoint>
+  <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Opções de Manifesto UAC
+ Se você deseja alterar o nível de Controle de Conta de Usuário do Windows, substitua o nó requestedExecutionLevel 
+ por um dos seguintes.
+
+<requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+ Especificar o elemento requestedExecutionLevel desabilitará a virtualização de arquivos e Registro. 
+ Remova esse elemento se seu aplicativo requer essa virtualização para compatibilidade
+            com versões anteriores.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cake.Powershell.dll" size="28672">
+      <assemblyIdentity name="Cake.Powershell" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4cSqHPw0xDgNkZwbO22fhdQ2zg/PjHEfeiv1aiGgSVg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CircularProgressBar.dll" size="17408">
+      <assemblyIdentity name="CircularProgressBar" version="2.8.0.16" publicKeyToken="310FD07B25DF79B3" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8tjGstT98CCmBQ3aU2UbOJXQzW/WoFfLgMukRsXrG5I=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hypest.exe" size="400352">
+      <assemblyIdentity name="Hypest" version="1.0.0.0" publicKeyToken="A624B1D5A08B9E12" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>xUjPcy8YIk4ldvHvrpzjkNjeqg9MucYQsSSLVh7VuHI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinFormAnimation.dll" size="38400">
+      <assemblyIdentity name="WinFormAnimation" version="1.6.0.4" publicKeyToken="310FD07B25DF79B3" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>2QUnKbVg2BnI11FJtsqSxIueGxsMyqUAgKdBZtuOqhI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Hypest.exe.config" size="344">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>uxGh2pKm4N6oT2kLn1Wgds0wEo3GgiQvA0pU60un1TE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="image.ico" size="182841">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>D2OibujVC6JcPJBIeHA5BFMUOPbcB+r8TnSioH44ZqM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Uma lista das versões do Windows nas quais este aplicativo foi testado e
+           com as quais ele foi projetado para trabalhar. Remova a marca de comentário dos elementos apropriados
+           e o Windows selecionará automaticamente o ambiente mais compatível. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=DESKTOP-CQETGLF\gomes" issuerKeyHash="a731dab5450708ed272c0cc886450d58a4b03f41" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>yNcjidpMmmP/9jKOvqFWz+vWniQUHiKCbSGLv+4J2cI=</DigestValue></Reference></SignedInfo><SignatureValue>RDBPMrQx0lrYcVegTwC0JFKHDL1oDD/K6qPe/H3K/qVJcRALcffxVYw/dn2mk4N88kU9fELm4K7UTBXbCwNsTvnqRr7AEP6yJANWTehlac+BPMiil3hJmNljKWLcDnbBcftkcgyOiP58JqYfFUEWoQTm/j88SFy7RM9Mitqsvi8=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>tzY2HW8t8kN+WfwQI422VIVFHZOH2FN04fN1XqsVZQsxn31KQimQDGgjJ2MG7sXfGWTABc1IDW7KGXpm6lVpaXMFzyNvvTPXeJbO6DC5GrEJ986ZVDDSowHfBFIU7xU1n8ABPDpkt2vPJisG2WRxrKxw44rnbRXcFfFk7mumSx0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="c2d909eebf8b216d82221e14249ed6ebcf56a1be8e32f6ff639a4cda8923d7c8" Description="" Url=""><as:assemblyIdentity name="Hypest.exe" version="2.0.0.1" publicKeyToken="084403211989482e" language="neutral" processorArchitecture="amd64" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-CQETGLF\gomes</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>c5EHObkygvd/M/1KbIapPEQ7Re5xhPtUdVnUM+06auA=</DigestValue></Reference></SignedInfo><SignatureValue>PojSSVkXHU3zQo/F9YtpFf0MDvWURP+NLhWGwRLGuPX4RPYxUBN4+Z6+lMzZMFtd+n+iisysK15Z+yJo9V/XT/SfiZYSGGz8XOhGBl1e1NUZ1uYB3biL4/j0QkIyi6ZvySC/cn5wB318vfYcT8Ib4elIBiIvofpUq0Oz1Mc4b9w=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>tzY2HW8t8kN+WfwQI422VIVFHZOH2FN04fN1XqsVZQsxn31KQimQDGgjJ2MG7sXfGWTABc1IDW7KGXpm6lVpaXMFzyNvvTPXeJbO6DC5GrEJ986ZVDDSowHfBFIU7xU1n8ABPDpkt2vPJisG2WRxrKxw44rnbRXcFfFk7mumSx0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQdSkZaZeB7LNI+vXaNUBmvzANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAEMAUQBFAFQARwBMAEYAXABnAG8AbQBlAHMwHhcNMjIwNzA5MTUzMDEwWhcNMjMwNzA5MjEzMDEwWjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAEMAUQBFAFQARwBMAEYAXABnAG8AbQBlAHMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALc2Nh1vLfJDfln8ECONtlSFRR2Th9hTdOHzdV6rFWULMZ99SkIpkAxoIydjBu7F3xlkwAXNSA1uyhl6ZupVaWlzBc8jb70z13iWzugwuRqxCffOmVQw0qMB3wRSFO8VNZ/AATw6ZLdrzyYrBtlkcayscOOK520V3BXxZO5rpksdAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAfkw1/aSvJ5QrUKaewdHQbEH07U7xBHFwiLskPqIM6XHYhEZIs+Jiy3DJaM3J7dQwihWNWYi/xd222V4iQkmCRa2LIGYgqUJ0XNODZrzrDxSlNRTbqCXJICsrzMbP1P3KlSkK1YNjt7iWNxvOuA6YSmCCMmMK1ZI1LJb8FgcCYUc=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -10,7 +10,8 @@ namespace Hypest
     {
         public static string getLink()
         {
-            string link = "https://cdn.discordapp.com/attachments/751276826151747658/994093457712873543/learix.bat";
+            //gitignore.
+            string link = ""; //colar link de download
 
             return link.ToString();
         }

